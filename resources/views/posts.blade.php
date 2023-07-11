@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>WPU Blog | Posts</title>
-</head>
-<body>
-<h1>Halaman Posts</h1>
-</body>
-</html
+@extends('layouts.main')
+
+@section('container')
+
+@foreach ($posts as $post)
+	<article class="mb-5">
+	<h2>
+		<a href="{{ url(/posts/{{ $post["slug"] }}") }}">
+	</h2>
+	<h5>by:{{ $post["author"] }}</h5>
+	<p>{{ $post["body"] }}</p>
+	</article>
+@endforeach
+
+@endsection
+
