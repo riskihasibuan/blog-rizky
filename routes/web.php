@@ -69,8 +69,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
 
 //  halaman single slug
-route:: get('posts/{slug}', function($slug){
-    return view('post',[
-        "title" => "Single Post"
-    ]);
+route : :get('posts/{slug}', function($slug){
+    return view('post');
 });
