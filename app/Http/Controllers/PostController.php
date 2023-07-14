@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
@@ -10,17 +10,17 @@ class PostController extends Controller
 
 	public function index()
 	{
-	    return view('posts',[
-	        "title"=> "Posts",
-	        "posts" => Post::all()
-	    ]);
+		return view('posts', [
+			"title" => "Posts",
+			"posts" => Post::all()
+		]);
 	}
 
 	public function show($slug)
-{
-		 return view('post', [
-        "title" => "Single Post",
-        "post" => Post::find($slug)
-    ]);
-
+	{
+		return view('post', [
+			"title" => "Single Post",
+			"post" => Post::find($slug)
+		]);
+	}
 }
