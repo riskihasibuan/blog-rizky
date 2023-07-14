@@ -32,6 +32,12 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
 	public static fuction all()
 	{
-		return self::$blog_posts;
+		return collect (self::$blog_posts);
 	}
+
+	public static fuction find($slug)
+{
+
+	$posts = static::all();
+	return $post->firstWhere('slug',$slug);
 }
