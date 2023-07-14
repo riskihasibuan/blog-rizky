@@ -1,50 +1,10 @@
-<?php
+<?php 
 
-use App\Models\Post;
-use Illuminate\Support\Facades\Route;
+namespace App\Models;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view ('home', [
-        "title" =>"Home" 
-    ]);
-});
-
-Route::get('/about', function () {
-    return view('about', [
-        "title"=> "About",
-        "name" => "Riski Hasibuan",
-        "email"=> "riski123@gmail.com",
-        "image"=> "riski.jpg"
-    ]);
-});
-
-
-
-
-Route::get('/blog', function () {
-    return view('posts',[
-        "title"=> "posts",
-        "posts" => Post::all()
-
-
-    ]);
-}); 
-
-
-//  halaman single slug
-route::get('posts/{slug}', function($slug){
-      $blog_posts = [
+class Post
+{
+	private static $blog_posts =  [
     [
         "title" => "Judul Pertama",
         "slug" => "judul-post-pertama",
@@ -67,18 +27,11 @@ consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
- ],
+ ]
 ];
 
-    $new_post = [];
-    foreach ($blog_posts as $post) {
-        if($post["slug"] === $slug) {
-            $new_post = $post;
-        }
-    }
-
-    return view('post', [
-        "title" => "Single Post",
-        "post" => $new_post
-    ]);
-});
+	public static fuction all()
+	{
+		return self::$blog_posts;
+	}
+}
