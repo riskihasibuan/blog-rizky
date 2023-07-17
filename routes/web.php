@@ -34,4 +34,4 @@ Route::get('/about', function () {
 
 
 Route::get('/blog',[PostController::class,'index'] );
-route::get('posts/{slug}', [PostController:: class,'show']);
+route::get('posts/{post:slug}', [PostController:: class,'show']);
