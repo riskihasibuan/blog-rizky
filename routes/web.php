@@ -18,31 +18,30 @@ use App\Models\Category;
 */
 
 Route::get('/', function () {
-    return view ('home', [
-        "title" =>"Home" 
+    return view('home', [
+        "title" => "Home"
     ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
-        "title"=> "About",
+        "title" => "About",
         "name" => "Riski Hasibuan",
-        "email"=> "riski123@gmail.com",
-        "image"=> "riski.jpg"
+        "email" => "riski123@gmail.com",
+        "image" => "riski.jpg"
     ]);
 });
 
 
 
 
-Route::get('/blog',[PostController::class,'index'] );
-Route::get('posts/{post}', [PostController:: class,'show']);
+Route::get('/blog', [PostController::class, 'index']);
+Route::get('posts/{post}', [PostController::class, 'show']);
 
-Route::get('/categories/{category:slug}', function(Category) {
-    return view('category',[
+Route::get('/categories/{category:slug}', function (Category $category) {
+    return view('category', [
         'title' => $category->name,
         'posts' => $category->posts,
         'category' => $category->name
     ]);
 });
-
