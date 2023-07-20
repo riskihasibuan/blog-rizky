@@ -16,19 +16,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+    
 
-        User::create([
-            'name' => 'Riski Hasibuan',
-            'email' => 'riskihasibuan@gmail.com',
-            'password' => bcrypt('12345')
-        ]);
+        // User::create([
+        //     'name' => 'Riski Hasibuan',
+        //     'email' => 'riskihasibuan@gmail.com',
+        //     'password' => bcrypt('12345')
+        // ]);
 
-        User::create([
-            'name' => 'Rafi Lubis',
-            'email' => 'rafilubis@gmail.com',
-            'password' => bcrypt('12345')
-        ]);
+        // User::create([
+        //     'name' => 'Rafi Lubis',
+        //     'email' => 'rafilubis@gmail.com',
+        //     'password' => bcrypt('12345')
+        // ]);
+
+        User::factory(5)->create();
 
         Category::create([
             'name' => 'Web Programing',
@@ -40,65 +42,67 @@ class DatabaseSeeder extends Seeder
             'slug' => 'personal'
         ]);
 
-        Post::create([
-            'title' => 'Judul Pertama',
-            'slug' => 'judul-pertama',
-            'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'category_id' => 1,
-            'user_id' => 1
-        ]);
+        Post::factory(20)->create();
 
-       Post::create([
-            'title' => 'Judul kedua',
-            'slug' => 'judul-ke-dua',
-            'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'category_id' => 1,
-            'user_id' => 1
-        ]);
+    //     Post::create([
+    //         'title' => 'Judul Pertama',
+    //         'slug' => 'judul-pertama',
+    //         'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    //         tempor incididunt ut',
+    //         'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    //         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    //         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    //         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    //         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    //         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    //         'category_id' => 1,
+    //         'user_id' => 1
+    //     ]);
+
+    //    Post::create([
+    //         'title' => 'Judul kedua',
+    //         'slug' => 'judul-ke-dua',
+    //         'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    //         tempor incididunt ut',
+    //         'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    //         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    //         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    //         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    //         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    //         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    //         'category_id' => 1,
+    //         'user_id' => 1
+    //     ]);
 
         
-        Post::create([
-            'title' => 'Judul ketiga',
-            'slug' => 'judul-ke-tiga',
-            'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'category_id' => 2,
-            'user_id' => 1
-        ]);
+    //     Post::create([
+    //         'title' => 'Judul ketiga',
+    //         'slug' => 'judul-ke-tiga',
+    //         'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    //         tempor incididunt ut',
+    //         'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    //         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    //         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    //         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    //         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    //         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    //         'category_id' => 2,
+    //         'user_id' => 1
+    //     ]);
 
-        Post::create([
-            'title' => 'Judul keempat',
-            'slug' => 'judul-ke-empat',
-            'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut',
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'category_id' => 2,
-            'user_id' => 2
-        ]);
+    //     Post::create([
+    //         'title' => 'Judul keempat',
+    //         'slug' => 'judul-ke-empat',
+    //         'excerpt' =>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    //         tempor incididunt ut',
+    //         'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    //         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    //         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    //         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    //         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    //         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    //         'category_id' => 2,
+    //         'user_id' => 2
+    //     ]);
     }
 }
