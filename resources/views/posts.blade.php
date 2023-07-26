@@ -44,10 +44,14 @@
 				<div class="card-body">
 					<h5 class="card-title">{{ $post->title }}</h5>
 					<p>
+						@foreach($posts as $post)
 						<small class="text-muted">
-							By. <a href="{{ url('authors/'.$posts[0]->user->username) }}" class=" text-decoration-none">{{ $posts->author->name }}</a> {{ $posts[0]
-							->created_at->diffForHumans() }}
+							By. <a href="{{ url('authors/'.$post->user->username) }}" class="text-decoration-none">
+								{{ $post->user->name }}
+							</a>
+							{{ $post->created_at->diffForHumans() }}
 						</small>
+						@endforeach
 					</p>
 					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 					<a href="#" class="btn btn-primary">Go somewhere</a>
