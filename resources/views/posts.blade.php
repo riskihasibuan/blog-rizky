@@ -40,8 +40,8 @@
 
 		<div class="col-md-4">
 			<div class="card">
-				<img src="https://source.unsplash.com/1200x400/?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
-				<div class="card-body">
+				<img src="https://source.unsplash.com/500x400/?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
+				<div class="card-body text center">
 					<h5 class="card-title">{{ $post->title }}</h5>
 					<p>
 						@foreach($posts as $post)
@@ -54,7 +54,7 @@
 						@endforeach
 					</p>
 					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
+					<a href="#" class="btn btn-primary">Read more</a>
 				</div>
 			</div>
 		</div>
@@ -62,17 +62,5 @@
 	@endforeach
 </div>
 
-
-@foreach ($posts->skip(1) as $post)
-<article class="mb-5 border-bottom pb-3">
-	<h2><a href="{{ url('/posts/'.$post->slug) }}" class="text-decoration-none">{{ $post["title"] }}</a></h2>
-
-	<p>By. <a href="{{ url('authors/'.$post->user->username) }}" class=" text-decoration-none">{{ $post->user->name }}</a> in <a href="{{ url('/categories/'.$post->category->slug) }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
-	<p>{{ $post["excerpt"] }}</p>
-
-	<a href="{{ url('/posts/'.$post['id']) }}" class=" text-decoration-none">Read more..</a>
-
-</article>
-@endforeach
 
 @endsection
