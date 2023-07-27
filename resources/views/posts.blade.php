@@ -44,11 +44,10 @@
 					<h5 class="card-title">{{ $post->title }}</h5>
 					<p>
 						<small class="text-muted">
-							By. <a href="{{ url('authors/'.$post->author->username) }}" class="text-decoration-none">
-								{{ $post->author->name }}
-							</a>{{
-					$post->created_at->diffForHumans()
-				}}
+							html
+							By. <a href="{{ url('authors/'. ($post->author->username ?? '')) }}" class="text-decoration-none">
+								{{ $post->author->name ?? '' }}
+							</a>{{ $post->created_at->diffForHumans() }}
 						</small>
 					</p>
 					<p>{{ $post->excerpt }}</p>
