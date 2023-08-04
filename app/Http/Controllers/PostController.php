@@ -19,7 +19,7 @@ class PostController extends Controller
 		return view('posts', [
 			"title" => "All Posts",
 			"active"=> 'posts',
-			"posts" => $posts->get()
+			"posts" =>Post::latest()->paginate(5)
 		]);
 	}
 
