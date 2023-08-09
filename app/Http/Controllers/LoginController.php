@@ -9,9 +9,9 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view ('login.index',[
-            'title'=>'Login',
-            'active'=>'login'
+        return view('login.index', [
+            'title' => 'Login',
+            'active' => 'login'
         ]);
     }
 
@@ -22,12 +22,11 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($credentials)){
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended("{{ url ('/dashboard') }}");
+            return redirect()->intended('/dashboard');
         }
 
-        return back()->with ('loginError','Login failed!');
-       
+        return back()->with('loginError', 'Login failed!');
     }
 }
