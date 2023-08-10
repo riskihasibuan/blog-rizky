@@ -19,11 +19,32 @@
             <a class="nav-link {{ ($title === "Categories") ? 'active' : '' }}" href="{{ url('/blog') }}">Categories</a>
           </li>
         </ul>
+
         <ul class="navbar-nav ms-auto">
+          @auth
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome back,{{ auth()->user()->name }}
+          </a>
+          <ul class="dropdown-menu" arial-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href={{ url ('/dashboard')}}> <i class="bi bi-layout-text-window-reverse"></i> My Dashboard</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <form action={{ url ('/logout')}} method="post">
+                @csrf
+                <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-in-left"></i> Logout</button>
+              </form>
+            </li>
+          </ul>
+        </li>
+    
+          @else
           <li class="nav-item">
             <a href="{{ url('/login')}}" class="nav-link {{ ($active === "login") ? 'active' : '' }"><i class="bi bi-box-arrow-right"></i> Login</a>
           </li>
+          @endauth
       </ul>
+
     </div>
   </div>
 </nav>
