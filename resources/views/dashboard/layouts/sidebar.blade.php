@@ -1,4 +1,4 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse ">
     <div class="position-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item">
@@ -8,24 +8,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href={{ url('/dashboard/posts')  }}>
-                    My Pots
+                <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}" href="{{url('/dashboard/posts')}}">
+                <i class="fa-regular fa-file"></i>
+                    My Posts
                 </a>
             </li>
         </ul>
-        @can('admin')
-        <h6 class="sidebar-heading d-flex justtify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>administrator</span>
-        </h6>
-
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard/categories*') ? 'active' : '' }}" href={{ url('/dashboard/categories')  }}>
-                    <span data-feather="grid"></span>
-                    Post Categories
-                </a>
-            </li>
-        </ul>
-        @endcan
     </div>
 </nav>
