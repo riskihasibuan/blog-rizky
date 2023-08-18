@@ -80,8 +80,10 @@ class DashboardPostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function show(Post $post)
     {
-        //
+        return view ('dashboard.posts.show',{
+            'post' => $post
+        });
     }
 }
