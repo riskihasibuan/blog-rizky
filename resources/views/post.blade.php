@@ -7,7 +7,5 @@
 
 		{!! $post->body !!}
 	
-	
-		<a href="{{ url('/blog') }}" class="d-block mt-3">Back to Posts</a>
-
+		<a href="{{ url('/dashboard/posts') }}" class="btn btn-success"></span></a>
 @endsection

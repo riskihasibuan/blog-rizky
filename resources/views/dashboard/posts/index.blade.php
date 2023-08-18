@@ -22,7 +22,7 @@
         <td>{{ $post->title }}</td>
         <td>{{ $post->category->name }}</td>
         <td>
-          <a href="" class="badge bg-info"><span class="fa fa-eye"></span></a>
+          <a href="{{ url('/posts/'.$post->slug) }}" class="badge bg-info"><span class="fa fa-eye"></span></a>
           <a href="" class="badge bg-warning"><span class="fa fa-pencil-alt"></span></a>
           <a href="" class="badge bg-danger"><span class="fa fa-trash"></span></a>
         </td>
