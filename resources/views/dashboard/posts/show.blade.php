@@ -2,14 +2,13 @@
 
 @section('content')
 
-<div class="container">
+<div class="container" style="margin-top:  -90px;">
 	<div class="row my-3">
-		<div class="col-lg-8">
-
-			<h1 class="mb-3">{{ $post->title }}</h1>
-
-			<a href="{{ url('dashboard/posts') }}" class="btn btn-success"><span data-feather="arrow-left"></span>Back To My Posts</a>
-			<a href="{{ url('dashboard/posts/'.$post->slug.'/edit') }}" class="btn btn-warning"><span data-feather="edit"></span>Edit</a>
+		<div class="col-lg-9">
+			<h1 class="mb-3" >{{ $post->title }}</h1>
+			<a href="{{ url('dashboard/posts') }}" class="btn btn-success"><i class="fa-solid fa-arrow-left"></i> Back To My Posts</a>
+			<a href="{{ url('dashboard/posts/'.$post->slug.'/edit') }}" class="btn btn-warning"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
+			<a href="" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Delete</a>
 			@if($post->image)
 			<div style="max-height: 350px;overflow:hidden;">
 				<img src="{{ asset('storage/'.$post->image) }}" alt="{{ $post->category->name }}" class="img-fluid mt-3">
